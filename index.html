@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ewsfme</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Martian+Mono:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Handjet:wght,ELSH@100..900,2&display=swap');
+    </style>
+    
+    <link rel="stylesheet" type="text/css" href="styles/new-style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png" sizes="16x16 32x32">
+    
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <button type="button" class="logo" onclick="showPage('home')">ewsfme</button>
+        <nav class="nav">
+            <button type="button" class="nav-link active" onclick="showPage('home')">Home</button>
+            <button type="button" class="nav-link" onclick="showPage('projects')">Projects</button>
+            <button type="button" class="nav-link" onclick="showPage('notes')">Notes</button>
+            <button type="button" class="nav-cli-btn" onclick="openTerminal()">[CLI] <kbd>Ctrl+K</kbd></button>
+            
+            <label class="theme-switch" aria-label="Toggle theme">
+    <input type="checkbox" id="theme-toggle">
+    <div class="theme-btn-wrapper">
+        <!-- biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> -->
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="18.36" x2="5.64" y2="19.78"></line><line x1="18.36" y1="4.22" x2="19.78" y2="5.64"></line></svg>
+        <!-- biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> -->
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        
+    </div>
+</label>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div id="home" class="page active">
+            <section class="about-hero">
+                <div class="about-text">
+                    <h1>About Me</h1>
+                    <p>19. I'm a bipolar who likes water and doing nothing. A stupid coder with no purpose, bleh-bleh. 
+                        My parents are computer guys, so am I. That's it. Simple story of how I ended up here o_o 
+                        I’m always excited to work on projects that challenge me to grow and learn something new. 
+                        Erm. That's all I guess... Scroll the site and click buttons! </p>
+                    
+                    <div class="link-menu mt-4">
+                        <a class="btn-links" href="cv_dd_v2.docx" download="cv_dd_v2">Download .cv</a>
+                        <a class="btn-links" href="https://www.linkedin.com/in/ditchedpath/" target="_blank" rel="noopener">LinkedIn</a>
+                        <a class="btn-links" href="mailto:quodexcitare@proton.me">Email me</a>
+                    </div>
+                </div>
+                <div class="about-graphic">
+                    <div class="pixel-art-cat">
+                        <img src="./img/doorBK.gif" alt="Pixel art door">
+                        <div class="pixel-star x1"></div>
+                        <div class="pixel-star x2"></div>
+                        <div class="pixel-star x3"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="skills-section">
+                <h2>Skills & Technologies</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="card-header">Skills</div>
+                        <div class="tags-container">
+                            <span class="tag" 
+                                  data-title="HTML + CSS" 
+                                  data-story="Started learning them for future jobs while messing around with my old site. Honestly, not much to say here - it's the absolute base.">HTML & CSS</span>
+                            <span class="tag"
+                                  data-title="JavaScript"
+                                  data-story="Picked it up right after HTML and CSS. Done both frontend stuff and backend with Node.js, plus used it quite a bit for writing automation tests.">JavaScript</span>
+                            <span class="tag"
+                                  data-title="Python"
+                                  data-story="Learned some basics back in school, made a simple calculator, and then we kind of parted ways. Recently got back into it, mostly tinkering with PyTest.">Python</span>
+                            <span class="tag"
+                                  data-title="C++"
+                                  data-story="The one I have the most mileage with, mostly thanks to uni. Pointers, memory headaches, classic OOP, and even messed with Arduino boards on it.">C++</span>
+                            <span class="tag"
+                                  data-title="C#"
+                                  data-story="Used it mainly in Unity. I understand its logic, structure, and how it ticks under the hood.">C#</span>
+                            <span class="tag"
+                                  data-title="SQL"
+                                  data-story="Got a bit of experience with relational databases and writing queries from my university classes. Nothing crazy, just the essentials.">SQL</span>
+                            <span class="tag"
+                                  data-title="Playwright"
+                                  data-story="Fast, snappy, and just works. Super solid tool whenever I need clean, headache-free tests.">Playwright</span>
+                            <span class="tag"
+                                  data-title="WebDriverIO"
+                                  data-story="My literal gateway into QA automation. The first framework I ever touched.">WebDriverIO</span>
+                            <span class="tag"
+                                  data-title="Cypress"
+                                  data-story="Favorite framework, period. That's pretty much the whole story.">Cypress</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="card-header">Setup</div>
+                        <div class="tags-container">
+                            <span class="tag" 
+                                  data-title="Fedora" 
+                                  data-story="I started learning Linux a couple years ago, but recently I installed Fedora KDE. Spent 4 hours configuring akmod-nvidia drivers, survived 3 black screens, and spent 2 more hours fixing nvidia drivers. 
+                                  Now my system boots in 4 seconds just so I can sit there, stare at a blank VS Code window, and listen to looped synthwave. 
+                                  10/10 operating system. For cool linux guys:
+                                  de: KDE Plasma
+                                  wm: Wayland
+                                  sh: bash
+                                  term: kitty"
+                                  data-image="img/fedora-screen.png">Machine with Fedora</span>
+                            <span class="tag"
+                                  data-title="Windows"
+                                  data-story="Nothing interesting here. I use Windows 11 Home mainly for gaming, because Linux still have more poor situation with drivers and game support">Machine with Windows</span>
+                            <span class="tag"
+                                  data-title="Experiments"
+                                  data-story="I don't know what to write here yet...">Machine with Experiments</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="card-header">Tools</div>
+                        <div class="tags-container">
+                            <span class="tag">VS Code</span>
+                            <span class="tag">Firefox DevTools</span>
+                            <span class="tag">Chrome DevTools</span>
+                            <span class="tag">Git</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="projects-section my-5">
+                <h2>Experience</h2>
+                <div class="timeline-wrapper">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-badge"><span>2026</span></div>
+                        <div class="project-card">
+                            <div class="card-header accent">QA Engineering</div>
+                            <div class="card-subheader">New Horizons</div>
+                            <p>Redesign website, learning testing methodologies, tools and techniques.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge"><span>2025</span></div>
+                        <div class="project-card">
+                            <div class="card-header accent">Web Development</div>
+                            <div class="card-subheader">Self-Education</div>
+                            <p>First steps in web development, focusing on modern frameworks and best practices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-badge"><span>2024</span></div>
+                        <div class="project-card">
+                            <div class="card-header accent">Student</div>
+                            <div class="card-subheader">University</div>
+                            <p>Dive into computer science fundamentals and software engineering principles.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge"><span>2023</span></div>
+                        <div class="project-card">
+                            <div class="card-header accent">Almost a Filler year</div>
+                            <div class="card-subheader">Where am I?</div>
+                            <p>New second school, where I started learning Linux, and that's it, no more interesting things here.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge"><span>2022</span></div>
+                        <div class="project-card">
+                            <div class="card-header accent">GameDev. 3D</div>
+                            <div class="card-subheader">Oh, donut</div>
+                            <p>Continuing with game development, some Blender modeling.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge"><span>2021</span></div>
+                        <div class="project-card">
+                            <div class="card-header accent">GameDev. 2D</div>
+                            <div class="card-subheader">Oh, pixels</div>
+                            <p>Jump into learning something with code. Unity as an Engine.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-badge"><span>2020</span></div>
+                        <div class="project-card">
+                            <div class="card-header accent">Arduino Projects</div>
+                            <div class="card-subheader">Sound of Metal</div>
+                            <p>Some interactions with hardware.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <div id="projects" class="page">
+            <h1>JavaScript Projects</h1>
+            <p class="subtitle">My starter-pack JavaScript applications. Test them out!</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-info">
+                        <span class="project-category">Utility</span>
+                        <h3>CantMath</h3>
+                        <p>Simple and clean calculator built with pure JavaScript.</p>
+                    </div>
+                    <a href="projects/cantmath.html" class="btn-project">Launch ↗</a>
+                </div> 
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <span class="project-category">Security</span>
+                        <h3>Passify</h3>
+                        <p>Password generator with custom preferences and parameters.</p>
+                    </div>
+                    <a href="projects/passify.html" class="btn-project">Launch ↗</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <span class="project-category">Arcade</span>
+                        <h3>Snakie</h3>
+                        <p>Classic snake game to relax and take a break.</p>
+                    </div>
+                    <a href="projects/snakie.html" class="btn-project">Play ↗</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <span class="project-category">Puzzle</span>
+                        <h3>Planarity</h3>
+                        <p>Planarity game logic implemented on web canvas.</p>
+                    </div>
+                    <a href="projects/planarity.html" class="btn-project">Play ↗</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <span class="project-category">Puzzle</span>
+                        <h3>Mastermind</h3>
+                        <p>Planarity game logic implemented on web canvas.</p>
+                    </div>
+                    <a href="projects/mastermind.html" class="btn-project">Play ↗</a>
+                </div>
+
+                <div class="project-card accent">
+                    <div class="project-info">
+                        <span class="project-category">API Integration</span>
+                        <h3>Atmo</h3>
+                        <p>Weather web application utilizing external APIs for real-time data.</p>
+                    </div>
+                    <a href="projects/atmo.html" class="btn-project">Launch ↗</a>
+                </div>
+
+                <div class="project-card accent">
+                    <div class="project-info">
+                        <span class="project-category">Utility</span>
+                        <h3>SSART</h3>
+                        <p>Create ASCII art just from what you see on your screen.</p>
+                    </div>
+                    <a href="projects/camera.html" class="btn-project">Launch ↗</a>
+                </div>
+
+                <div class="project-card accent">
+                    <div class="project-info">
+                        <span class="project-category">Experiment Look</span>
+                        <h3>Anarchy Redesign</h3>
+                        <p>Dirty, grunge aesthetic smell is coming from here...</p>
+                    </div>
+                    <a href="projects/planarity.html" class="btn-project">Get into ↗</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="notes" class="page">
+            <h1>Notes</h1>
+            <p class="subtitle">Devlogs, thoughts, and random technical notes.</p>
+            
+            <div class="notes-list">
+
+                <article class="note-item">
+                    <div class="note-meta">
+                        <span class="note-date">1 October, 2026</span>
+                        <div class="note-badges">
+                            <span class="tag">Thoughts</span>
+                        </div>
+                    </div>
+                    <h3 class="note-title">Spooky month</h3>
+                    <p class="note-preview">1 normal post i guess</p>
+                </article>
+
+                <article class="note-item">
+                    <div class="note-meta">
+                        <span class="note-date">May 27, 2026</span>
+                        <div class="note-badges">
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">Refactoring</span>
+                        </div>
+                    </div>
+                    <h3 class="note-title">Migrating to Deep Violet</h3>
+                    <p class="note-preview">Completely replaced the old green terminal styling with clean, modern dark cards, soft violet highlights, and rigid container tags. Interface feels unified now.</p>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <div id="story-modal" class="modal-overlay">
+        <div class="modal-card">
+            <button type="button" class="modal-close" onclick="closeStoryModal()" aria-label="Close modal">&times;</button>
+            
+            <div class="modal-badge-wrapper">
+                <span id="modal-badge" class="tag"></span>
+            </div>
+
+            <h2 id="modal-title" class="modal-heading" aria-live="polite">Details</h2>
+
+            <div class="modal-image-wrapper">
+                <img id="modal-image" src="" alt="preview" style="display: none;">
+            </div>
+
+            <div class="modal-body">
+                <p id="modal-text"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="terminal-modal" class="modal-overlay">
+        <div class="terminal-card">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <button type="button" class="dot red" onclick="closeTerminal()" aria-label="Close terminal"></button>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="terminal-title">ewsfme@fedora: ~ (bash)</div>
+                <button type="button" class="modal-close-term" onclick="closeTerminal()" aria-label="Close terminal">&times;</button>
+            </div>
+            <div id="terminal-body" class="terminal-body">
+                <div class="term-line">Terminal loaded. Press 'help' for commands.</div>
+            </div>
+            <div class="terminal-input-row">
+                <span class="term-prompt">ewsfme@fedora:~$</span>
+                <input type="text" id="terminal-input" autocomplete="off" spellcheck="false">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

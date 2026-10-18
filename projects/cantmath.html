@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calco - Calculator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Martian+Mono:wght@400;700&display=swap');
+    </style>
+    <link rel="stylesheet" type="text/css" href="../styles/cantmath.css">
+</head>
+<body>
+
+    <div class="calc-container">
+        <a href="../about.html#projects" class="back-arrow" title="Back to site">←</a>
+        <div class="calc-display">
+            <div id="calc-history" class="calc-history"></div>
+            <div id="calc-output" class="calc-output">0</div>
+        </div>
+
+        <div class="calc-grid">
+            <button type="button" class="calc-btn clear" onclick="clearCalc()">AC</button>
+            <button type="button" class="calc-btn op" onclick="setOperator('/')">/</button>
+            <button type="button" class="calc-btn op" onclick="setOperator('*')">×</button>
+            <button type="button" class="calc-btn op" onclick="setOperator('-')">−</button>
+
+            <button type="button" class="calc-btn" onclick="appendNumber('7')">7</button>
+            <button type="button" class="calc-btn" onclick="appendNumber('8')">8</button>
+            <button type="button" class="calc-btn" onclick="appendNumber('9')">9</button>
+            <button type="button" class="calc-btn op" onclick="setOperator('+')">+</button>
+
+            <button type="button" class="calc-btn" onclick="appendNumber('4')">4</button>
+            <button type="button" class="calc-btn" onclick="appendNumber('5')">5</button>
+            <button type="button" class="calc-btn" onclick="appendNumber('6')">6</button>
+            <button type="button" class="calc-btn" onclick="appendNumber('.')">.</button>
+
+            <button type="button" class="calc-btn" onclick="appendNumber('1')">1</button>
+            <button type="button" class="calc-btn" onclick="appendNumber('2')">2</button>
+            <button type="button" class="calc-btn" onclick="appendNumber('3')">3</button>
+            <button type="button" class="calc-btn" onclick="appendNumber('0')">0</button>
+
+            <button type="button" class="calc-btn eq" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <script src="../scripts/cantmath.js"></script>
+</body>
+</html>

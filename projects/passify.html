@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Passo App</title>
+    <link rel="stylesheet" type="text/css" href="../styles/passify.css  ">
+   
+</head>
+<body>
+
+    <div class="screen-container">
+        <a href="../about.html#projects" class="back-arrow" title="Back to site">←</a>
+      <h1>Passo - Password Generator</h1>
+        <form id="frm1" autocomplete="off">
+            <div class="inputs-container">
+                <label for="a">PASSWORD LENGTH</label>
+                <input id="a" type="range" min="8" max="50" value="12">
+                
+                <label for="result">SYSTEM OUTPUT</label>
+                <input type="text" id="result" placeholder="READY_FOR_DATA" readonly>
+            </div>
+
+            <div class="options-container">
+                <label><input type="checkbox" id="Caps"> BIG LETTERS</label>
+                <label><input type="checkbox" id="Numbers"> NUMBERS</label>
+                <label><input type="checkbox" id="Symbols"> SYMBOLS</label>
+                <label><input type="checkbox" id="EtR"> EASY TO REMEMBER</label>
+            </div>
+
+            <div class="buttons-container">
+                <button type="button" class="button" onclick="Passo()">Generate</button>
+                <button type="button" class="button" onclick="CopyPassword()">Copy</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../scripts/passify.js"></script>
+</body>
+</html>

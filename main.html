@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Enter</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000000;
+    }
+
+    #splash-gif {
+      cursor: pointer;
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      user-select: none;
+      transition: transform 0.35s;
+    }
+    #splash-gif:hover {
+        transform: scale(1.9);
+    }
+  </style>
+</head>
+<body>
+
+  <img id="splash-gif" src="img/lain.gif" alt="Click to enter">
+
+  <script>
+    const gif = document.getElementById('splash-gif');
+
+    gif.addEventListener('click', () => {
+      window.location.href = 'about.html';
+    });
+  </script>
+
+</body>
+</html>

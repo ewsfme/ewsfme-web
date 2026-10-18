@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <title>ASCII Camera — Live Stream</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+    </style>
+    <link rel="stylesheet" href="../styles/camera.css">
+</head>
+<body>
+
+    <!-- Hidden: video source & processing canvas (never visible) -->
+    <video id="cam-video" playsinline autoplay muted></video>
+    <canvas id="cam-canvas"></canvas>
+
+    <!-- ═══ TERMINAL FRAME ═══ -->
+    <div class="terminal-frame" id="terminal" data-theme="wine">
+
+        <!-- Title bar -->
+        <div class="titlebar">
+            <a href="../about.html#projects" class="back-arrow" title="Back to site">←</a>
+            <span class="titlebar-text">ascii_cam@stream:~/live — bash</span>
+            <span></span>
+        </div>
+
+        <!-- Main viewport: ASCII output + CRT overlays -->
+        <div class="viewport" id="viewport">
+            <pre id="ascii-output" aria-live="off"> [SYS] ASCII_CAM v1.0
+ [SYS] Initializing video stream...
+ [SYS] Press START CAPTURE to connect video stream.</pre>
+            <canvas id="color-canvas"></canvas>
+            <div class="scanlines"></div>
+            <div class="vignette"></div>
+
+            <div id="start-overlay" class="start-overlay">
+                <button type="button" id="btn-start" class="start-btn">[ START CAPTURE ]</button>
+            </div>
+        </div>
+
+        <!-- HUD status bar -->
+        <div class="hud">
+            <div class="hud-group">
+                <span id="hud-status" class="hud-badge standby">⊘ STANDBY</span>
+                <span id="hud-res" class="hud-label">---×---</span>
+            </div>
+            <div class="hud-group">
+                <span id="hud-fps" class="hud-label">-- FPS</span>
+                <span id="hud-ft" class="hud-label">--ms</span>
+            </div>
+            <div class="hud-group hud-controls">
+                <button type="button" class="hud-btn" id="btn-theme" title="Switch theme [1-4]">THEME: WINE</button>
+                <button type="button" class="hud-btn" id="btn-invert" title="Invert luminance [I]">INV</button>
+                <button type="button" class="hud-btn" id="btn-mirror" title="Mirror mode [M]">MIRROR</button>
+                <button type="button" class="hud-btn" id="btn-pause" title="Pause / Resume [Space]">⏸</button>
+                <button type="button" class="hud-btn" id="btn-save" title="Save ASCII frame [S]">SAVE</button>
+            </div>
+        </div>
+
+        <!-- Keyboard shortcuts hint -->
+        <div class="hints">
+            <kbd>1</kbd>-<kbd>4</kbd> Theme &nbsp;
+            <kbd>C</kbd> Color &nbsp;
+            <kbd>I</kbd> Invert &nbsp;
+            <kbd>M</kbd> Mirror &nbsp;
+            <kbd>Space</kbd> Pause &nbsp;
+            <kbd>S</kbd> Save &nbsp;
+            <kbd>+</kbd><kbd>−</kbd> Resolution
+        </div>
+    </div>
+
+    <script src="../scripts/camera.js"></script>
+</body>
+</html>

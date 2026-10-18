@@ -1,0 +1,257 @@
+:root {
+	--bg-color: #0a0a0a;
+	--card-bg: #0d0d12;
+	--text-primary: #f2f4f3;
+	--text-secondary: #aaaaaa;
+	--accent-color: #8f5363;
+	--accent-hover: #c76d80;
+	--border-color: #1a1a1c;
+	--border-focus: #3b1d44;
+	--success-color: #98c379;
+	--warning-color: #e5c07b;
+	--error-color: #e06c75;
+
+	--font-main: "Inter", sans-serif;
+	--font-mono: "Martian Mono", monospace;
+	--font-heading: "Handjet", sans-serif;
+
+	/* --- TRANSITIONS.DEV // SPINNING COUNTER MOTION TOKENS --- */
+	--t-spin-duration: 0.7s;
+	--t-spin-ease: cubic-bezier(0.16, 1, 0.3, 1);
+	--t-spin-blur: 2px;
+	--t-spin-scale: 0.92;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text-primary);
+	font-family: var(--font-main);
+	line-height: 1.6;
+	min-height: 100vh;
+}
+
+.container {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+/* Header & Nav */
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 24px 20px;
+	background-color: var(--bg-color);
+	border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+	font-family: var(--font-mono);
+	font-weight: 700;
+	font-size: 1.1rem;
+	color: var(--accent-color);
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+}
+
+.nav a.nav-link {
+	font-size: 0.85rem;
+	color: var(--text-secondary);
+	font-family: var(--font-mono);
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.nav a.nav-link:hover {
+	color: var(--accent-hover);
+}
+
+/* Game Card Wrapper */
+.game-wrapper {
+	max-width: 540px;
+	margin: 40px auto;
+	background: var(--card-bg);
+	border: 1px solid var(--border-color);
+	border-radius: 14px;
+	padding: 28px;
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+	font-family: var(--font-mono);
+}
+
+.back-arrow {
+	display: block;
+	width: fit-content;
+	font-size: 1.4rem;
+	color: var(--text-secondary);
+	text-decoration: none;
+	transition: color 0.25s, transform 0.25s;
+	font-family: var(--font-mono);
+	margin-bottom: 12px;
+	align-self: flex-start;
+}
+.back-arrow:hover {
+	color: var(--accent-hover);
+	transform: translateX(-4px);
+}
+
+.game-header h2 {
+	font-family: var(--font-heading);
+	font-size: 2rem;
+	color: #fff;
+	margin-bottom: 6px;
+}
+
+.mono-text {
+	font-size: 0.8rem;
+	color: var(--text-secondary);
+}
+
+/* Logs and Attempts */
+.attempts-log {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	max-height: 340px;
+	overflow-y: auto;
+	margin: 24px 0;
+	padding-right: 6px;
+}
+
+.attempt-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #121217;
+	border: 1px solid var(--border-color);
+	padding: 8px 14px;
+	border-radius: 8px;
+}
+
+.guess-digits {
+	display: flex;
+	gap: 8px;
+}
+
+/* --- DIGIT BOX & SPINNING COUNTER IMPLEMENTATION --- */
+.digit-box {
+	width: 38px;
+	height: 42px;
+	background: #000;
+	border: 1px solid var(--accent-hover);
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	font-size: 1.15rem;
+	color: #fff;
+	overflow: hidden; /* Ховає цифри поза межами одного очка */
+}
+
+.t-spin-viewport {
+	display: inline-flex;
+	position: relative;
+	overflow: hidden;
+	height: 1.2em;
+	line-height: 1.2em;
+}
+
+.t-spin-track {
+	display: flex;
+	flex-direction: column;
+	will-change: transform, filter;
+	transform: translateY(0);
+	transition:
+		transform var(--t-spin-duration) var(--t-spin-ease),
+		filter calc(var(--t-spin-duration) * 0.4) ease-out;
+}
+
+.t-spin-digit {
+	height: 1.2em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	user-select: none;
+}
+
+.t-spin-track.animating {
+	filter: blur(var(--t-spin-blur));
+	transform: scaleY(var(--t-spin-scale));
+}
+
+/* Clues */
+.clues {
+	display: flex;
+	gap: 14px;
+	font-size: 0.75rem;
+	font-weight: 700;
+}
+
+.clue-exact {
+	color: var(--success-color);
+}
+
+.clue-misplaced {
+	color: var(--warning-color);
+}
+
+/* Input Form Controls */
+.input-row {
+	display: flex;
+	gap: 10px;
+	margin-top: 15px;
+}
+
+.code-input {
+	flex: 1;
+	background: #08080a;
+	border: 1px solid var(--accent-hover);
+	border-radius: 8px;
+	padding: 10px 14px;
+	color: #fff;
+	font-family: var(--font-mono);
+	font-size: 1.1rem;
+	letter-spacing: 6px;
+	text-align: center;
+	outline: none;
+	transition: border-color 0.2s ease;
+}
+
+.code-input:focus {
+	border-color: #fff;
+}
+
+.btn-project {
+	padding: 10px 20px;
+	background: #141416;
+	border: 1px solid var(--accent-hover);
+	color: #fff;
+	border-radius: 8px;
+	font-family: var(--font-mono);
+	font-size: 0.85rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background 0.2s ease;
+}
+
+.btn-project:hover {
+	background: var(--accent-hover);
+}
+
+.status-msg {
+	margin-top: 15px;
+	min-height: 20px;
+	font-size: 0.8rem;
+	color: var(--text-secondary);
+}

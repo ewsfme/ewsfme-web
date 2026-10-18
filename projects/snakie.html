@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snakie - Arcade</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;700&display=swap');
+    </style>
+    <link rel="stylesheet" type="text/css" href="../styles/snakie.css">
+</head>
+<body>
+
+    <div class="game-wrapper">
+        <a href="../about.html#projects" class="back-arrow" title="Back to site">←</a>
+        <div class="scoreboard">
+            <div>SCORE: <span id="score">0</span></div>
+            <div>RECORD: <span id="high-score">0</span></div>
+        </div>
+
+        <canvas id="snake-canvas" width="400" height="400"></canvas>
+
+        <div class="controls-hint">Use WASD or Arrow Keys to move</div>
+        <button type="button" class="btn-restart" onclick="startGame()">Start / Restart</button>
+    </div>
+
+    <script src="../scripts/snakie.js"></script>
+</body>
+</html>

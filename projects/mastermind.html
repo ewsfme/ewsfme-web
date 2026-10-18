@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastermind // Security Bypass</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@600;700&family=Inter:wght@400;600&family=Martian+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles/mastermind.css">
+</head>
+<body>
+
+    <main class="container">
+        <div class="game-wrapper">
+            <a href="../about.html#projects" class="back-arrow" title="Back to Projects">←</a>
+            <div class="game-header">
+                <h2>Security Bypass // Mastermind</h2>
+                <p class="mono-text">Decrypt the 4-digit firewall sequence (0-9). 8 attempts available.</p>
+            </div>
+
+            <!-- Terminal Output / Attempts Log -->
+            <div id="attempts-log" class="attempts-log" aria-live="polite">
+                <!-- Спроби зі spinning-ефектом генеруються тут -->
+            </div>
+
+            <!-- Input Controls -->
+            <form id="guess-form" class="input-row">
+                <input 
+                    type="text" 
+                    id="guess-input" 
+                    class="code-input" 
+                    maxlength="4" 
+                    placeholder="••••" 
+                    autocomplete="off" 
+                    pattern="[0-9]{4}"
+                    aria-label="Enter 4-digit guess">
+                <button type="submit" id="btn-submit" class="btn-project">Submit</button>
+                <button type="button" id="btn-restart" class="btn-project" style="display: none;">Retry</button>
+            </form>
+
+            <div id="status-msg" class="status-msg mono-text">System ready. Enter 4 digits.</div>
+        </div>
+    </main>
+
+    <!-- Script -->
+    <script src="../scripts/mastermind.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wazer - Weather App</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Martian+Mono:wght@400;700&display=swap');
+    </style>
+    <link rel="stylesheet" type="text/css" href="../styles/atmo.css">
+</head>
+<body>
+
+    <div class="weather-card">
+        <a href="../about.html#projects" class="back-arrow" title="Back to site">←</a>
+        <form class="search-box" onsubmit="event.preventDefault(); fetchWeather();">
+            <input type="text" id="city-input" placeholder="Search city..." autocomplete="off" required>
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="weather-info">
+            <h2 id="city" class="city-name">Enter a city</h2>
+            <div id="temp" class="temperature">--°C</div>
+            <div id="condition" class="weather-condition">Awaiting input</div>
+
+            <div class="weather-metrics">
+                <div class="metric-item">
+                    <span>Humidity</span>
+                    <strong id="humidity">--%</strong>
+                </div>
+                <div class="metric-item">
+                    <span>Wind Speed</span>
+                    <strong id="wind">-- m/s</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/atmo.js"></script>
+</body>
+</html>
